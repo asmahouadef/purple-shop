@@ -1,0 +1,41 @@
+<?php
+date_default_timezone_set(' africa/algerie');
+include 'dbh.inc.php';
+include 'comments.inc.php';
+?>
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="hip.css">
+	 <title>COMENTS</title> 
+</head>
+<body>
+<nav class="topnav">
+	 <div id="nheader">
+	       PURPLE SHOP
+	     </div>
+</nav>
+<div class="wrapper">  
+	<dir class="sidebar">
+		<h2>MENU</h2>
+<ul id="wag" >
+	<li> <a href="shop.html">PURPLE</a></li>
+	<li> <a href="albums.html">ALBUMS</a></li>
+	<li> <a href="army.html">ARMYBOMBS</a></li>
+	<li> <a href="clothes.html">CLOTHES</a></li>
+	<li><a href="bt21.html">BT21</a></li>
+	<li><a href="com.html">COMENTS</a></li>
+</ul>
+</dir>
+</div>
+<div class="cm">
+<?php
+echo" <form method='post' action='". setcomments($conn)."'>
+ 	<input type='hidden' name="uid" value='anonymous'>
+ 	<input type='hidden' name="date" value='".date('Y-m-d H:i:s')."'>
+ 	<textarea name='message'></textarea><br>
+ 	<button type='submit' name='commrntsubmit'>coment</button>
+ </form> ";
+?>
+</div>
